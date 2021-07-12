@@ -11,7 +11,7 @@ namespace CursoEFCore.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=CursoEFCore; UID=sa; PWD=sa123456; MultipleActiveResultSets=true;");
+            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=CursoEFCore; UID=sa; PWD=; MultipleActiveResultSets=true;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
