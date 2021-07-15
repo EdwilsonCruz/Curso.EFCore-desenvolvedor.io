@@ -18,8 +18,8 @@ namespace CursoEFCore.Data.Mapping
             builder.Property(cliente => cliente.Nome).HasColumnType("VARCHAR(80)").IsRequired();
             builder.Property(cliente => cliente.Telefone).HasColumnType("CHAR(11)");
             builder.Property(cliente => cliente.CEP).HasColumnType("CHAR(8)").IsRequired();
-            builder.Property(cliente => cliente.Cidade).HasColumnType("CHAR(2)").IsRequired();
-            builder.Property(cliente => cliente.Estado).HasMaxLength(60).IsRequired();
+            builder.Property(cliente => cliente.Estado).HasColumnType("CHAR(2)").IsRequired();
+            builder.Property(cliente => cliente.Cidade).HasColumnType("VARCHAR(80)").IsRequired();
             builder.Property(cliente => cliente.Email).HasColumnType("VARCHAR(80)").IsRequired();
 
             builder.HasIndex(i => i.Telefone).HasName("idx_cliente_telefone");

@@ -13,12 +13,15 @@ namespace CursoEFCore.Data.Constantes
             public const string Pedido = "Pedido";
             public const string Produto = "Produto";
             public const string PedidoItem = "PedidoItem";
+            public const string CursoEFCore = "CursoEFCore";
+
         }
 
         public struct Schemas
         {
             public const string Sistema = "Sistema";
             public const string Identidade = "Identidade";
+            public const string Migracao = "Migracao";
         }
     }
 }

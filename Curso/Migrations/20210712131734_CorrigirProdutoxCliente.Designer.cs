@@ -4,14 +4,16 @@ using CursoEFCore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CursoEFCore.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20210712131734_CorrigirProdutoxCliente")]
+    partial class CorrigirProdutoxCliente
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,7 +67,10 @@ namespace CursoEFCore.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ClienteId")
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ClienteId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FinalizadoEm")
@@ -162,9 +167,7 @@ namespace CursoEFCore.Migrations
                 {
                     b.HasOne("CursoEFCore.Domain.Cliente", "Cliente")
                         .WithMany()
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClienteId");
                 });
 
             modelBuilder.Entity("CursoEFCore.Domain.PedidoItem", b =>
